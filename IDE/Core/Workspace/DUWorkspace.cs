@@ -14,6 +14,8 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Host.Mef;
 using Microsoft.CodeAnalysis.Text;
 
+using Core.Generation;
+
 namespace Core.Workspace
 {
     public class DUWorkspace : Microsoft.CodeAnalysis.Workspace, IWorkspace
