@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="FileTabs.cs">
+      <SubType>usercontrol</SubType>
+    </Compile>
+    <Compile Include="FileTabs.Designer.cs">
+      <DependentUpon>FileTabs.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     <Compile Include="ReferencesDialog.Designer.cs">
       <DependentUpon>ReferencesDialog.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FileTabs.resx">
+      <DependentUpon>FileTabs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

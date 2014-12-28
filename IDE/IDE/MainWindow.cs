@@ -107,6 +107,13 @@ namespace IDE
             AddColumn("EndLine");
             AddColumn("EndChar");
             #endregion
+
+
+            FileTabs tabs = new FileTabs();
+
+            this.Controls.Add(tabs);
+
+            tabs.Controls.Add(new Label());
         }
 
         private void AddColumn(string property, string text = "")

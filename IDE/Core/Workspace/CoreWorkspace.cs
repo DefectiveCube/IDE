@@ -25,12 +25,12 @@ namespace Core.Workspace
             GACDirectory = new FileInfo(typeof(object).Assembly.Location).DirectoryName;
 
             // Assign values for user directories
-            UserDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\IDE";
-            ProjectDirectory = UserDirectory + @"\Projects";
-            WorkspaceDirectory = UserDirectory + @"\Workspace";
+            UserDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "IDE");
+            ProjectDirectory = Path.Combine(UserDirectory, "Projects");
+            //WorkspaceDirectory = Path.Combine(UserDirectory, "Workspace");
 
             // Verify each directory and create if it doesn't exist
-            foreach (var str in new[] { UserDirectory, ProjectDirectory, WorkspaceDirectory })
+            foreach (var str in new[] { UserDirectory, ProjectDirectory/*, WorkspaceDirectory*/ })
             {
                 if (!Directory.Exists(str))
                 {
@@ -98,10 +98,10 @@ namespace Core.Workspace
             var path = Path.Combine(projectDir.FullName, name + ".duproj");
 
             // Create Project File in Project Directory
-            var writer = File.CreateText(path);
+            using(var writer = File.CreateText(path))
+            {
 
-            writer.Write("project file");
-            writer.Close();
+            }
 
             return path;
         }
